@@ -45,6 +45,7 @@ jobs:
           ECR_REPOSITORY: demo-frontend
           IMAGE_TAG: ${{ steps.image.outputs.version }}
         run: |
+          echo $ECR_REGISTRY
           echo ecr_repository::$ECR_REPOSITORY
           echo "::set-output name=ecr_repository::$ECR_REPOSITORY"
           echo "::set-output name=image_tag::$IMAGE_TAG"
